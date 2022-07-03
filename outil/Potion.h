@@ -5,8 +5,23 @@
 #ifndef RPG_POTION_H
 #define RPG_POTION_H
 
+#include "Outil.h"
 
-class Potion {
+using namespace std;
+
+class Potion : public Outil {
+
+private:
+    double point;
+
+public:
+    Potion();
+
+    Potion(string libelle, double point);
+
+    double getPoint();
+
+    void setPoint(double point);
 
 };
 

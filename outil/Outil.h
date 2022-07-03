@@ -5,8 +5,24 @@
 #ifndef RPG_OUTIL_H
 #define RPG_OUTIL_H
 
+#include "../base/GameObject.h"
+#include <string>
 
-class Outil {
+using namespace std;
+
+class Outil : public GameObject {
+
+protected:
+    string libelle;
+
+public:
+    Outil();
+
+    Outil(string libelle);
+
+    string getLibelle();
+
+    void setLibelle(string libelle);
 
 };
 

@@ -5,8 +5,29 @@
 #ifndef RPG_AMULETTE_H
 #define RPG_AMULETTE_H
 
+#include "Outil.h"
+#include <string>
 
-class Amulette {
+using namespace std;
+
+class Amulette : public Outil {
+
+private:
+    double portee;
+    double puissance;
+
+public:
+    Amulette();
+
+    Amulette(string libelle, double portee, double puissance);
+
+    double getPortee();
+
+    void setPortee(double portee);
+
+    double getPuissance();
+
+    void setPuissance(double puissance);
 
 };
 
