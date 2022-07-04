@@ -5,7 +5,7 @@
 #ifndef RPG_BATIMENT_H
 #define RPG_BATIMENT_H
 
-#include "../base/GameObject.h"
+#include "GameObject.h"
 
 class Batiment : public GameObject {
 

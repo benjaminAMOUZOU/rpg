@@ -5,7 +5,7 @@
 #ifndef RPG_CREATURE_H
 #define RPG_CREATURE_H
 
-#include "../base/GameObject.h"
+#include "GameObject.h"
 
 class Creature: public GameObject {
 

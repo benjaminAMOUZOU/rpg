@@ -6,7 +6,7 @@
 #define RPG_SAC_H
 
 #include <vector>
-#include "../base/GameObject.h"
+#include "GameObject.h"
 #include "Outil.h"
 
 using namespace std;
