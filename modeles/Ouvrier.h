@@ -5,8 +5,11 @@
 #ifndef RPG_OUVRIER_H
 #define RPG_OUVRIER_H
 
+#include "Personnage.h"
 
-class Ouvrier {
+using namespace std;
+
+class Ouvrier: public Personnage {
 
 };
 

@@ -5,8 +5,30 @@
 #ifndef RPG_PERSONNAGE_H
 #define RPG_PERSONNAGE_H
 
+#include "Creature.h"
+#include "Sac.h"
 
-class Personnage {
+using namespace std;
+
+class Personnage : public Creature {
+protected:
+    int niveauHabilite;
+    Sac *sac;
+
+public:
+    Personnage();
+
+    Personnage(string nom, int niveauSante, int niveauHabilite);
+
+    Personnage(const Personnage &personnage);
+
+    int getNiveauHabilite();
+
+    void setNiveauHabilite(int niveauHabilite);
+
+    ~Personnage();
+
+    Personnage &operator=(Personnage &personnage);
 
 };
 

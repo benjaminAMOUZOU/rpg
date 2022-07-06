@@ -5,9 +5,20 @@
 #ifndef RPG_PORTE_H
 #define RPG_PORTE_H
 
+#include "GameObject.h"
 
-class Porte {
+class Porte : public GameObject {
+private:
+    int position;
 
+public:
+    Porte();
+
+    Porte(int position);
+
+    int getPosition();
+
+    void setPosition(int);
 };
 
 

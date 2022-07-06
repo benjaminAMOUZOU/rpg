@@ -5,8 +5,11 @@
 #ifndef RPG_DRUIDE_H
 #define RPG_DRUIDE_H
 
+#include "Personnage.h"
 
-class Druide {
+using namespace std;
+
+class Druide: public Personnage {
 
 };
 

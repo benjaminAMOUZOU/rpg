@@ -5,8 +5,11 @@
 #ifndef RPG_SOLDAT_H
 #define RPG_SOLDAT_H
 
+#include "Personnage.h"
 
-class Soldat {
+using namespace std;
+
+class Soldat: public Personnage {
 
 };
 

@@ -5,8 +5,11 @@
 #ifndef RPG_RELIGIEUX_H
 #define RPG_RELIGIEUX_H
 
+#include "Personnage.h"
 
-class Religieux {
+using namespace std;
+
+class Religieux: public Personnage {
 
 };
 

@@ -6,6 +6,7 @@
 #define RPG_SAC_H
 
 #include <vector>
+#include <algorithm>
 #include "GameObject.h"
 #include "Outil.h"
 
@@ -27,7 +28,7 @@ public:
 
     void setOutils(vector<Outil *> outils);
 
-    void addOutil(Outil outil);
+    void addOutil(Outil *outil);
 
     void operator=(const Sac &sac);
 
