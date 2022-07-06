@@ -5,7 +5,8 @@
 #ifndef RPG_PIECE_H
 #define RPG_PIECE_H
 
-#include "Batiment.h"
+#include <vector>
+//#include "Batiment.h"
 #include "GameObject.h"
 #include "Porte.h"
 
