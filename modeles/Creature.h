@@ -6,6 +6,7 @@
 #define RPG_CREATURE_H
 
 #include "GameObject.h"
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -27,6 +28,8 @@ public:
     int getNiveauSante();
 
     void setNiveauSante(int niveauSante);
+
+    virtual void print();
 
 };
 

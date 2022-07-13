@@ -26,3 +26,9 @@ int Creature::getNiveauSante() {
 void Creature::setNiveauSante(int niveauSante) {
     this->niveauSante = niveauSante;
 }
+
+void Creature::print() {
+    string ecran;
+    ecran = "Creature[nom: " + this->nom + ", niveauSante:  " + to_string(this->niveauSante) + "]";
+    cout << ecran << endl;
+}

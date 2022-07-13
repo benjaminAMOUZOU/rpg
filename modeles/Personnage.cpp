@@ -6,12 +6,12 @@
 
 Personnage::Personnage() : Creature() {
     this->niveauHabilite = 0;
-    this->sac = new Sac();
+    this->sac = new Sac();//Le sac ne contient pas d'outil
 }
 
 Personnage::Personnage(string nom, int niveauSante, int niveauHabilite) : Creature(nom, niveauSante) {
     this->niveauHabilite = niveauHabilite;
-    this->sac = new Sac();
+    this->sac = new Sac();//ici aussi
 }
 
 Personnage::Personnage(const Personnage &personnage) {
@@ -21,7 +21,7 @@ Personnage::Personnage(const Personnage &personnage) {
 
     //Copie du sac
     this->sac = new Sac();
-    for(int i=0; i<personnage.sac->getOutils().size();i++){
+    for (int i = 0; i < personnage.sac->getOutils().size(); i++) {
 
     }
     //Copie du contenu du sac, mais pour l'instant
@@ -45,7 +45,17 @@ Personnage::~Personnage() {
 }
 
 Personnage &Personnage::operator=(Personnage &personnage) {
-
+    return *this;
 }
+
+void Personnage::print() {
+    string ecran;
+    ecran = "Personnage[nom: " + this->nom + ", niveauSante:  " + to_string(this->niveauSante)
+            + ", niveauHabilete:  " + to_string(this->niveauHabilite) + "]";
+
+    //Il manque le contenu du sac
+    cout << ecran << endl;
+}
+
 
 

@@ -9,8 +9,13 @@
 
 using namespace std;
 
-class Soldat: public Personnage {
+class Soldat : public Personnage {
+public:
+    Soldat();
 
+    Soldat(string nom, int niveauSante, int niveauHabilite);
+
+    void print(void);
 };
 
 

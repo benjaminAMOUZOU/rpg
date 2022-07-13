@@ -3,4 +3,40 @@ project(rpg)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(rpg main.cpp)
+add_executable(rpg
+        consoles/Scene.cpp
+        consoles/Scene.h
+        modeles/Amulette.cpp
+        modeles/Amulette.h
+        modeles/Animal.cpp
+        modeles/Animal.h
+        modeles/Arme.cpp
+        modeles/Arme.h
+        modeles/Batiment.cpp
+        modeles/Batiment.h
+        modeles/Creature.cpp
+        modeles/Creature.h
+        modeles/Druide.cpp
+        modeles/Druide.h
+        modeles/GameObject.cpp
+        modeles/GameObject.h
+        modeles/Outil.cpp
+        modeles/Outil.h
+        modeles/Ouvrier.cpp
+        modeles/Ouvrier.h
+        modeles/Personnage.cpp
+        modeles/Personnage.h
+        modeles/Piece.cpp
+        modeles/Piece.h
+        modeles/Porte.cpp
+        modeles/Porte.h
+        modeles/Potion.cpp
+        modeles/Potion.h
+        modeles/Religieux.cpp
+        modeles/Religieux.h
+        modeles/Sac.cpp
+        modeles/Sac.h
+        modeles/Soldat.cpp
+        modeles/Soldat.h
+        main.cpp
+        )

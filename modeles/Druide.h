@@ -9,7 +9,13 @@
 
 using namespace std;
 
-class Druide: public Personnage {
+class Druide : public Personnage {
+public:
+    Druide();
+
+    Druide(string nom, int niveauSante, int niveauHabilite);
+
+    void print();
 
 };
 

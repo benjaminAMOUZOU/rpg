@@ -9,7 +9,13 @@
 
 using namespace std;
 
-class Ouvrier: public Personnage {
+class Ouvrier : public Personnage {
+public:
+    Ouvrier();
+
+    Ouvrier(string nom, int niveauSante, int niveauHabilite);
+
+    void print();
 
 };
 

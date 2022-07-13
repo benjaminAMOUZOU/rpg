@@ -30,6 +30,7 @@ public:
 
     Personnage &operator=(Personnage &personnage);
 
+    virtual void print();
 };
 
 
