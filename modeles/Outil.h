@@ -5,7 +5,7 @@
 #ifndef RPG_OUTIL_H
 #define RPG_OUTIL_H
 
-#include "../base/GameObject.h"
+#include "GameObject.h"
 #include <string>
 
 using namespace std;
