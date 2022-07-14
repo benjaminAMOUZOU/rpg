@@ -6,6 +6,7 @@
 #define RPG_OUTIL_H
 
 #include "GameObject.h"
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -23,6 +24,8 @@ public:
     string getLibelle();
 
     void setLibelle(string libelle);
+
+    virtual void print();
 
 };
 

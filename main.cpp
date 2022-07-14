@@ -10,10 +10,8 @@ int main() {
     numero = scene.choisirPersonnage();
     nom = scene.choisirNom();
     scene.creationDecor(numero, nom);
-
-    //Pour demain 14 Juillet
-    //1- Completer sac et outil du personnage (méthode non écrite, affectation et vérification du bon fonctionnement)
-    //2- Méthode print
+    scene.presentePiece();
+    scene.choixAdversaire();
 
     return 0;
 }

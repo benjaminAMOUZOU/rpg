@@ -3,23 +3,31 @@
 //
 
 #include "Arme.h"
+
 Arme::Arme() : Outil(), point(0), niveau(0) {}
 
-Arme::Arme(string libelle, double point, double niveau) : Outil(libelle), point(point),
-                                                                      niveau(niveau) {}
+Arme::Arme(string libelle, int point, int niveau) : Outil(libelle), point(point),
+                                                    niveau(niveau) {}
 
-double Arme::getPoint() {
+int Arme::getPoint() {
     return this->point;
 }
 
-double Arme::getNiveau() {
+int Arme::getNiveau() {
     return this->niveau;
 }
 
-void Arme::setPoint(double point) {
+void Arme::setPoint(int point) {
     this->point = point;
 }
 
-void Arme::setNiveau(double niveau) {
+void Arme::setNiveau(int niveau) {
     this->niveau = niveau;
+}
+
+void Arme::print() {
+    string ecran;
+    ecran = "\t\tArme[libelle: " + this->libelle + ", point: " + to_string(this->point) + ", niveau: " +
+            to_string(this->niveau) + "]";
+    cout << endl << ecran << endl;
 }

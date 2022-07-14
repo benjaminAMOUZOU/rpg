@@ -26,9 +26,13 @@ public:
 
     void setNiveauHabilite(int niveauHabilite);
 
+    void setSac(Sac *sac);
+
+    Sac *getSac();
+
     ~Personnage();
 
-    Personnage &operator=(Personnage &personnage);
+    Personnage &operator=(const Personnage &personnage);
 
     virtual void print();
 };

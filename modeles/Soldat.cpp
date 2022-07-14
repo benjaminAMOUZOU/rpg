@@ -10,7 +10,8 @@ Soldat::Soldat(string nom, int niveauSante, int niveauHabilite) : Personnage(nom
 
 void Soldat::print(void) {
     string ecran = "Soldat[nom: " + this->nom + ", niveauSante:  " + to_string(this->niveauSante)
-                   + ", niveauHabilete:  " + to_string(this->niveauHabilite) + "]";
-    cout << ecran << endl;
-    //Il manque le contenu du sac
+                   + ", niveauHabilete:  " + to_string(this->niveauHabilite) + ", ";
+    cout << endl << ecran;
+    this->sac->print();
+    cout << "]" << endl;
 }

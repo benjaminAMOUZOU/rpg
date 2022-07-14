@@ -11,21 +11,24 @@ using namespace std;
 
 class Arme : public Outil {
 private:
-    double point;
-    double niveau;
+    int point;
+    int niveau;
 
 public:
     Arme();
 
-    Arme(string libelle, double point, double niveau);
+    Arme(string libelle, int point, int niveau);
 
-    double getPoint();
+    int getPoint();
 
-    void setPoint(double point);
+    void setPoint(int point);
 
-    double getNiveau();
+    int getNiveau();
 
-    void setNiveau(double niveau);
+    void setNiveau(int niveau);
+
+    void print();
+
 };
 
 

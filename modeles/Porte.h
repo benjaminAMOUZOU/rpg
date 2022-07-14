@@ -9,7 +9,7 @@
 
 class Porte : public GameObject {
 private:
-    int position;
+    int position;//quatre positions possibles nord(0) sud(1) est(2) ouest(3)
 
 public:
     Porte();

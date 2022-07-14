@@ -12,16 +12,18 @@ using namespace std;
 class Potion : public Outil {
 
 private:
-    double point;
+    int point;
 
 public:
     Potion();
 
-    Potion(string libelle, double point);
+    Potion(string libelle, int point);
 
-    double getPoint();
+    int getPoint();
 
-    void setPoint(double point);
+    void setPoint(int point);
+
+    void print();
 
 };
 
