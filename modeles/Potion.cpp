@@ -6,12 +6,18 @@
 
 Potion::Potion() : Outil(), point(0) {}
 
-Potion::Potion(string libelle, double point) : Outil(libelle), point(point) {}
+Potion::Potion(string libelle, int point) : Outil(libelle), point(point) {}
 
-double Potion::getPoint() {
+int Potion::getPoint() {
     return this->point;
 }
 
-void Potion::setPoint(double point) {
+void Potion::setPoint(int point) {
     this->point = point;
+}
+
+void Potion::print() {
+    string ecran;
+    ecran = "\t\tPotion[libelle: " + this->libelle + ", point: " + to_string(this->point) + "]";
+    cout << endl << ecran << endl;
 }

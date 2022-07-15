@@ -6,30 +6,34 @@
 #define RPG_SCENE_H
 
 #include "../modeles/Personnage.h"
+#include "../modeles/Batiment.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
 //Cette class contiendra des méthodes statiques de simulation du jeu en console
 class Scene {
 
-public:
+private:
     Personnage *joueur;
+    Batiment *batiment;
+    int pieceCourante;
 
+public:
     Scene();
 
-    //Titre du jeu
     void titre();
 
-    //Choix du personnage par le joueur
     int choisirPersonnage();
+
+    string choisirNom(void);
 
     void creationDecor(int numero, string nom);
 
-    string choisirNom(void);
-    //Création du cadre du jeu
-    //Création du personnage du joueur
-    //Création du batiment et de pieces et des personnages pour le combat
+    void presentePiece();
+
+    void choixAdversaire();
 };
 
 

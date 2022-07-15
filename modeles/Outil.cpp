@@ -19,3 +19,7 @@ string Outil::getLibelle() {
 void Outil::setLibelle(string libelle) {
     this->libelle = libelle;
 }
+
+void Outil::print() {
+    cout << endl << "\tOutil[libelle: " + libelle + "]" << endl;
+}

@@ -15,7 +15,7 @@ using namespace std;
 class Sac : public GameObject {
 
 private:
-    vector<Outil *> outils;
+    vector<Outil *> outils;//outils.size() pour avoir nbreOutils
 
 public:
     Sac();
@@ -30,9 +30,11 @@ public:
 
     void addOutil(Outil *outil);
 
-    void operator=(const Sac &sac);
+    Sac &operator=(const Sac &sac);
 
     ~Sac();
+
+    void print();
 };
 
 

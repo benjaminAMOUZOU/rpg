@@ -11,8 +11,8 @@ Religieux::Religieux(string nom, int niveauSante, int niveauHabilite) : Personna
 void Religieux::print() {
     string ecran;
     ecran = "Religieux[nom: " + this->nom + ", niveauSante:  " + to_string(this->niveauSante)
-            + ", niveauHabilete:  " + to_string(this->niveauHabilite) + "]";
-
-    //Il manque le contenu du sac
-    cout << ecran << endl;
+            + ", niveauHabilete:  " + to_string(this->niveauHabilite) + ", ";
+    cout << endl << ecran;
+    this->sac->print();
+    cout << "]" << endl;
 }

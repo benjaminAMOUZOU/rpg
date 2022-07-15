@@ -13,21 +13,23 @@ using namespace std;
 class Amulette : public Outil {
 
 private:
-    double portee;
-    double puissance;
+    int portee;
+    int puissance;
 
 public:
     Amulette();
 
-    Amulette(string libelle, double portee, double puissance);
+    Amulette(string libelle, int portee, int puissance);
 
-    double getPortee();
+    int getPortee();
 
-    void setPortee(double portee);
+    void setPortee(int portee);
 
-    double getPuissance();
+    int getPuissance();
 
-    void setPuissance(double puissance);
+    void setPuissance(int puissance);
+
+    void print();
 
 };
 

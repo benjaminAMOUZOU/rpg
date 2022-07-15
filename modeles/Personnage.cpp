@@ -11,7 +11,7 @@ Personnage::Personnage() : Creature() {
 
 Personnage::Personnage(string nom, int niveauSante, int niveauHabilite) : Creature(nom, niveauSante) {
     this->niveauHabilite = niveauHabilite;
-    this->sac = new Sac();//ici aussi
+    this->sac = new Sac();
 }
 
 Personnage::Personnage(const Personnage &personnage) {
@@ -19,15 +19,14 @@ Personnage::Personnage(const Personnage &personnage) {
     this->niveauSante = niveauSante;
     this->niveauHabilite = niveauHabilite;
 
+    //Suppression d'éventuels outils dans le sac de la personne
+    if (this->sac) {
+        delete this->sac;
+    }
+
     //Copie du sac
     this->sac = new Sac();
-    for (int i = 0; i < personnage.sac->getOutils().size(); i++) {
-
-    }
-    //Copie du contenu du sac, mais pour l'instant
-    //Création d'un nouveau pointeur
-    //Parcours et récupération des outils pointés, création de nouveau outils
-    //Assignation des outils crés au sac
+    this->sac = personnage.sac;//appel de la redéfinition de l'opérateur d'affectation dans sac
 }
 
 int Personnage::getNiveauHabilite() {
@@ -38,24 +37,45 @@ void Personnage::setNiveauHabilite(int niveauHabilite) {
     this->niveauHabilite = niveauHabilite;
 }
 
+void Personnage::setSac(Sac *sac) {
+    if (this->sac) {
+        delete this->sac;
+    }
+    this->sac = sac;
+}
+
+Sac *Personnage::getSac() {
+    return this->sac;
+}
+
 Personnage::~Personnage() {
     if (this->sac) {
         delete this->sac;
     }
 }
 
-Personnage &Personnage::operator=(Personnage &personnage) {
+Personnage &Personnage::operator=(const Personnage &personnage) {
+    this->nom = nom;
+    this->niveauSante = niveauSante;
+    this->niveauHabilite = niveauHabilite;
+
+    //Suppression d'éventuel outils dans le sac de la personne
+    if (this->sac) {
+        delete this->sac;//destructeur de sac appelé
+    }
+
+    //Copie du sac
+    this->sac = new Sac();
+    this->sac = personnage.sac;//redéfinition de l'opérateur d'affectation dans sac
+
     return *this;
 }
 
 void Personnage::print() {
     string ecran;
     ecran = "Personnage[nom: " + this->nom + ", niveauSante:  " + to_string(this->niveauSante)
-            + ", niveauHabilete:  " + to_string(this->niveauHabilite) + "]";
-
-    //Il manque le contenu du sac
-    cout << ecran << endl;
+            + ", niveauHabilete:  " + to_string(this->niveauHabilite) + ", ";
+    cout << endl << ecran << "\t";
+    this->sac->print();
+    cout << "]" << endl;
 }
-
-
-

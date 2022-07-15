@@ -6,9 +6,11 @@
 #define RPG_PIECE_H
 
 #include <vector>
-//#include "Batiment.h"
 #include "GameObject.h"
 #include "Porte.h"
+#include "Personnage.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -17,11 +19,14 @@ private:
     int longueur;
     int largeur;
     vector<Porte> portes;//Une pièce ne peut avoir au maximum que quatre portes
+    vector<Personnage *> personnages;
 
 public:
     Piece();
 
     Piece(int longeur, int largeur, vector<Porte> portes);
+
+    Piece(const Piece &piece);
 
     int getLongueur();
 
@@ -34,6 +39,14 @@ public:
     void setPortes(vector<Porte> portes);
 
     vector<Porte> getPortes();
+
+    void setPersonnages(vector<Personnage *> personnages);
+
+    vector<Personnage *> getPersonnages();
+
+    ~Piece();
+
+    void print();
 
 };
 
