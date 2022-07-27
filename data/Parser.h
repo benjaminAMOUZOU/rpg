@@ -19,7 +19,8 @@
 #include <iostream>
 #include <typeinfo>
 
-#define FILENAME "../data/level.save"
+#define PEOPLE_FILENAME "../data/level.save"
+#define MAP_FILENAME "../data/map.save"
 
 using namespace std;
 
@@ -34,12 +35,12 @@ public:
         adversaire->getSac()->addOutil(new Arme("Epée Glamdring", 50, 5));
         adversaire->getSac()->addOutil(new Amulette("Baton du magicien", 5, 10));
 
-        vector<Personnage *> personnages;/* = {joueur, adversaire};*/
+        vector<Personnage *> personnages = {joueur, adversaire};
 
         //operation
         //save(personnages);
-        //personnages = load();
-        /*for (auto personnage: personnages) {
+        /*personnages = load_people();
+        for (auto personnage: personnages) {
             personnage->print();
         }*/
     }
@@ -49,7 +50,7 @@ public:
 
         //Ouverture du fichier en ecriture
         ofstream fichier;
-        fichier.open(FILENAME, ios::trunc | ios::out);
+        fichier.open(PEOPLE_FILENAME, ios::trunc | ios::out);
         if (fichier) {
             for (int i = 0; i < personnages.size(); i++) {
                 json += personnages[i]->toJson();
@@ -66,25 +67,9 @@ public:
         }
     }
 
-    static vector<Personnage *> load() {
-        string ligne = "";
-        string json = "";
+    static vector<Personnage *> load_people() {
+        rapidjson::Document document = load("map.save");//Chargement du fichier de la map
         vector<Personnage *> vectorPersonnages;
-
-        //Ouverture du fichier en lecture et lecture du contenu
-        ifstream fichier;
-        fichier.open(FILENAME, ios::in);
-        if (fichier) {
-            while (!fichier.eof()) {
-                fichier >> ligne;
-                json += ligne;
-            }
-        }
-
-        //Parse a JSON string into DOM.
-        rapidjson::Document document;
-        const char *chaine = json.c_str();
-        document.Parse(chaine);
 
         //Parcours des personnages du DOM
         const rapidjson::Value &personnages = document["personnages"];
@@ -130,6 +115,38 @@ public:
             vectorPersonnages.push_back(personnage);
         }
         return vectorPersonnages;
+    }
+
+    static void load_map(int i, int *tableau) {
+        rapidjson::Document document = load(MAP_FILENAME);//Chargement du fichier de la map
+        const rapidjson::Value &niveau = document["levels"][i];
+        assert(niveau.IsArray());
+        for (rapidjson::SizeType j = 0; j < niveau.Size(); j++) {
+            //Modification des valeurs du tableau passé par adresse, NB un tableau de 3750
+            tableau[j] = niveau[j].GetInt();
+        }
+    }
+
+    static rapidjson::Document load(string filename) {
+        string ligne = "";
+        string json = "";
+
+
+        //Ouverture du fichier en lecture et lecture du contenu
+        ifstream fichier;
+        fichier.open(filename, ios::in);
+        if (fichier) {
+            while (!fichier.eof()) {
+                fichier >> ligne;
+                json += ligne;
+            }
+        }
+
+        //Parse a JSON string into DOM.
+        rapidjson::Document document;
+        const char *chaine = json.c_str();
+        document.Parse(chaine);
+        return document;
     }
 };
 
